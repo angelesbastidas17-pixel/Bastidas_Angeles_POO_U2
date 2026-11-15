@@ -38,3 +38,4 @@ Al ejecutar el programa, la vista en consola presenta un menú interactivo con l
   2. Haz clic derecho sobre `Main.java` y selecciona `Run As` > `1 Java Application`.
 
 ## Ejemplo de la salida en la consola:
+<img width="210" height="456" alt="image" src="https://github.com/user-attachments/assets/b38d6b5e-cc7f-4d85-8238-5fd496cf730a" />
