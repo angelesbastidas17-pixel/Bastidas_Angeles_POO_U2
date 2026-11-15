@@ -1,0 +1,15 @@
+*.class
+*.jar
+*.war
+*.ear
+
+build/
+dist/
+nbbuild/
+nbdist/
+nbproject/private/
+.nb-gradle/
+
+.DS_Store
+Thumbs.db
+Desktop.ini
