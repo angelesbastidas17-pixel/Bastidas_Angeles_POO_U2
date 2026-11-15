@@ -17,7 +17,6 @@ public class Torneo implements Serializable{
     private ArrayList<Equipo> equiposIniciales = new ArrayList<>();
     private ArrayList<Partido> historialPartidos = new ArrayList<>();    
     
-    // Agregué esto
     public void validarCantidad(int cantidad) throws NumeroEquiposInvalidoException {
         if (cantidad != 16) {
             throw new NumeroEquiposInvalidoException(
@@ -26,14 +25,8 @@ public class Torneo implements Serializable{
         }
     }
     
-    // cambie este
     public void registrarEquipos(ArrayList<Equipo> equipos) throws NumeroEquiposInvalidoException {
         validarCantidad(equipos.size());
-//        if (equipos.size() !=16){
-//            throw new NumeroEquiposInvalidoException(
-//                "Error: El torneo debe tener exactamente 16 equipos. Ingresaste: " + equipos.size()
-//            );
-//        }
         this.equiposIniciales = new ArrayList<>(equipos);
     }
 
@@ -90,13 +83,15 @@ public class Torneo implements Serializable{
         }
         return ganadores;
     }
-
+    
+    // serialización
     public void guardarTorneo(String rutaArchivo) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(rutaArchivo))) {
             oos.writeObject(this);
         }
     }
     
+    // deserialización
     public static Torneo cargarTorneo(String rutaArchivo) throws IOException, ClassNotFoundException {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(rutaArchivo))){
             return (Torneo) ois.readObject();
